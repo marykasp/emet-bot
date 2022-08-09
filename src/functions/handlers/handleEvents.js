@@ -8,6 +8,7 @@ module.exports = (client) => {
         .readdirSync(`./src/events/${folder}`)
         .filter((file) => file.endsWith(".js"));
 
+        // if the folder is the client folder then check if the object has a once property is so call client.once event else call client.on
       switch (folder) {
         case "client":
           for (const file of eventFiles) {
